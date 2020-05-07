@@ -9,19 +9,20 @@ PS: If you instantiate the class with no params, you have to generate prime p an
 """
 
 class ElGamal:
-  p = -1
-  g = -1
-  x = -1
-  y = -1
 
   #Instantiate class only with prime q
   def __init__(self, q):
     self.p = 2 * q + 1
+    self.g = -1
+    self.x = -1
+    self.y = -1
   
   #Instantiate class with prime q and generator g
   def __init__(self, q, g):
     self.p = 2 * q + 1
     self.g = g
+    self.x = -1
+    self.y = -1
 
   #Find a proper prime p of numBits bits using Miller-Rabin test with factor of accuracy k
   def findPrime(self, numBits, k):
