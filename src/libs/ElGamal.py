@@ -9,6 +9,10 @@ PS: If you instantiate the class with no params, you have to generate prime p an
 """
 
 class ElGamal:
+  p = -1
+  g = -1
+  x = -1
+  y = -1
 
   #Instantiate class only with prime q
   def __init__(self, q):
@@ -52,10 +56,11 @@ class ElGamal:
 
   def generatePrivateKey(self):
     self.x = random.randint(2, (self.p - 1)//2)
-    return x
+    return self.x
 
   def generatePublicKey(self):
-    self.findGenerator()
+    if self.g == -1:
+      self.findGenerator()
     self.y = modPow(self.g, self.x, self.p)
     return {
       "p": self.p,
