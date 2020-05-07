@@ -5,7 +5,7 @@ from utils.millerRabin import millerRabin
 """
 Python class for ElGamal implementation
 
-PS: If you instantiate the class with no params, you have to 
+PS: If you instantiate the class with no params, you have to generate prime p and generator g
 """
 
 class ElGamal:
@@ -19,7 +19,7 @@ class ElGamal:
     self.p = 2 * q + 1
     self.g = g
 
-  #Find a proper prime p from numBits bits using Miller-Rabin test with factor of accuracy k
+  #Find a proper prime p of numBits bits using Miller-Rabin test with factor of accuracy k
   def findPrime(self, numBits, k):
     while True:
       q = random.randint(2**(numBits - 2), 2**(numBits - 1))
